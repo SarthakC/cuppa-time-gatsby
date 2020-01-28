@@ -1,13 +1,13 @@
 :root {
-  --mainBrown: #2d1efa;
-  --mainYellow: #ff9e09;
-  --mainGrey: #ece8dc;
-  --mainWhite: #fff;
-  --mainDark: #222;
+  --mainBrown: hsl(244, 96%, 55%);
+  --mainYellow: rgb(255, 158, 9);
+  --mainGrey: rgb(235, 231, 219);
+  --mainWhite: rgb(255, 255, 255);
+  --mainDark: rgb(33, 33, 33);
 }
 
 body {
-  background: var(--mainWhite);
+  background: var(--mainWhite) !important;
   color: var(--mainDark);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -30,4 +30,16 @@ h6 {
   cursor: pointer;
   color: var(--mainYellow);
   font-size: 2rem;
+}
+
+.default-background {
+  color: var(--mainWhite);
+  min-height: 100vh;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgb(255, 158, 9, 0.5), rgb(255, 158, 9, 0.5));
+  background-position: center;
+  background-size: cover;
 }
