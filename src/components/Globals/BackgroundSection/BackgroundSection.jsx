@@ -8,7 +8,7 @@ const BackgroundSection = ({ img, styleClass, title, children }) => {
       fluid={img}
       preserveStackingContext={true}
     >
-      <h1 className="title title-white text--uppercase text-center display-4 font-weight-bold">
+      <h1 className="title title-white text-uppercase text-center display-4 font-weight-bold">
         {title}
       </h1>
       {children}

@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection/BackgroundSection"
+import Info from "../components/Home/Info/Info"
 
 export const query = graphql`
   {
@@ -30,11 +31,8 @@ const IndexPage = ({
 }) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <BackgroundSection
-      img={img}
-      title="cuppa time"
-      styleClass="default-background"
-    />
+    <BackgroundSection img={img} title="cuppa time" />
+    <Info />
   </Layout>
 )
 

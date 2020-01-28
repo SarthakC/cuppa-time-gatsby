@@ -38,12 +38,17 @@ https://www.iconfinder.com/webalys
         <Nav className="mx-auto">
           {state.links.map(({ id, path, text }) => {
             return (
-              <Nav.Link href={path} key={id} className="text-capitalize">
+              <Nav.Link
+                to={path}
+                key={id}
+                className="text-capitalize"
+                as={Link}
+              >
                 {text}
               </Nav.Link>
             )
           })}
-          <Nav.Link className="ml-sm-5">
+          <Nav.Link className="ml-sm-5" as={Link}>
             <FaCartArrowDown className="cart-icon" />
           </Nav.Link>
         </Nav>
