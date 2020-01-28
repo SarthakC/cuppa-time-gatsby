@@ -8,10 +8,7 @@ import Info from "../components/Home/Info/Info"
 
 export const query = graphql`
   {
-    img: file(
-      absolutePath: {}
-      relativePath: { eq: "default-background.jpeg" }
-    ) {
+    img: file(absolutePath: {}, relativePath: { eq: "about-background.jpeg" }) {
       id
       childImageSharp {
         fluid {
@@ -22,7 +19,7 @@ export const query = graphql`
   }
 `
 
-const IndexPage = ({
+const AboutPage = ({
   data: {
     img: {
       childImageSharp: { fluid: img },
@@ -30,10 +27,14 @@ const IndexPage = ({
   },
 }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <BackgroundSection img={img} title="cuppa time" />
+    <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
+    <BackgroundSection
+      img={img}
+      title="about us"
+      styleClass="about-background"
+    />
     <Info />
   </Layout>
 )
 
-export default IndexPage
+export default AboutPage

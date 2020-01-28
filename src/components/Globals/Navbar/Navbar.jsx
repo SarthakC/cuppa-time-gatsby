@@ -7,7 +7,7 @@ import { FaCartArrowDown } from "react-icons/fa"
 import { Navbar, Nav } from "react-bootstrap"
 
 const Header = () => {
-  const [state, setState] = useState({
+  const [state] = useState({
     links: [
       {
         id: 1,
@@ -16,7 +16,7 @@ const Header = () => {
       },
       {
         id: 2,
-        path: "/about",
+        path: "/about/",
         text: "about",
       },
     ],
