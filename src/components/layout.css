@@ -48,6 +48,7 @@ h6 {
 .btn-yellow {
   color: var(--mainYellow);
   border-color: var(--mainYellow);
+  background-color: transparent;
 }
 
 .btn-yellow:hover {

@@ -1,19 +1,52 @@
 import React, { useState } from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Button } from "react-bootstrap"
 import Img from "gatsby-image"
 import Title from "../../Globals/Title/Title"
 
 const Menu = ({ items: { nodes } }) => {
+  const getCategories = items => {
+    return ["all", ...new Set(items.map(({ category }) => category))]
+  }
+
+  const handleItems = category => {
+    category === "all"
+      ? setState({ ...state, coffeeItems: items })
+      : setState({
+          ...state,
+          coffeeItems: items.filter(item => item.category === category),
+        })
+  }
+
   const [state, setState] = useState({
     coffeeItems: nodes,
     items: nodes,
+    categories: getCategories(nodes),
   })
-  const { items, coffeeItems } = state
+
+  const { items, coffeeItems, categories } = state
 
   return (
     <section className="menu py-5">
       <Container>
         <Title title="best of our menu" />
+        <Row className="mb-5">
+          <Col className="mx-auto text-center">
+            {categories.map((category, index) => {
+              return (
+                <Button
+                  key={index}
+                  variant="light"
+                  className="btn-yellow text-capitalize m-3"
+                  onClick={() => {
+                    handleItems(category)
+                  }}
+                >
+                  {category}
+                </Button>
+              )
+            })}
+          </Col>
+        </Row>
         <Row>
           {items.length > 0 ? (
             coffeeItems.map(
