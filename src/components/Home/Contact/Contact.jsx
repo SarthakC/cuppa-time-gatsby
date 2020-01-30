@@ -8,7 +8,10 @@ const Contact = () => {
       <Title title="contact us" />
       <Row>
         <Col xs={10} sm={8} md={6} className="mx-auto">
-          <Form>
+          <Form
+            action="https://formspree.io/sarthak.chow@gmail.com"
+            method="POST"
+          >
             <Form.Group>
               <Form.Label htmlFor="name">Name</Form.Label>
               <Form.Control

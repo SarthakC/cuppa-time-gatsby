@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection/BackgroundSection"
-import Info from "../components/Home/Info/Info"
 import Menu from "../components/Home/Menu/Menu"
 import Products from "../components/Home/Product/Products/Products"
 import Contact from "../components/Home/Contact/Contact"
@@ -52,7 +51,6 @@ const IndexPage = ({
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <BackgroundSection img={img} title="cuppa time" />
-    <Info />
     <Menu items={menu} />
     <Products />
     <Contact />

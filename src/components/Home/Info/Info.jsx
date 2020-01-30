@@ -32,11 +32,15 @@ const Info = () => {
               the United States. Between Citizens of different States, and with
               the Indian Tribes.
             </p>
-            <Link to="/about/">
-              <Button variant="light" className="text-uppercase btn-yellow">
-                about page
-              </Button>
-            </Link>
+
+            <Button
+              variant="light"
+              className="text-uppercase btn-yellow"
+              as={Link}
+              to="/"
+            >
+              Home Page
+            </Button>
           </Col>
         </Row>
       </Container>
