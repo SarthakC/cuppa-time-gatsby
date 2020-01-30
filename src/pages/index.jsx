@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection/BackgroundSection"
 import Info from "../components/Home/Info/Info"
 import Menu from "../components/Home/Menu/Menu"
+import Products from "../components/Home/Product/Products/Products"
 
 export const query = graphql`
   {
@@ -52,6 +53,7 @@ const IndexPage = ({
     <BackgroundSection img={img} title="cuppa time" />
     <Info />
     <Menu items={menu} />
+    <Products />
   </Layout>
 )
 
