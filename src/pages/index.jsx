@@ -7,6 +7,7 @@ import BackgroundSection from "../components/Globals/BackgroundSection/Backgroun
 import Info from "../components/Home/Info/Info"
 import Menu from "../components/Home/Menu/Menu"
 import Products from "../components/Home/Product/Products/Products"
+import Contact from "../components/Home/Contact/Contact"
 
 export const query = graphql`
   {
@@ -54,6 +55,7 @@ const IndexPage = ({
     <Info />
     <Menu items={menu} />
     <Products />
+    <Contact />
   </Layout>
 )
 
