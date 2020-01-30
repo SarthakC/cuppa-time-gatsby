@@ -48,9 +48,10 @@ https://www.iconfinder.com/webalys
               </Nav.Link>
             )
           })}
-          <Nav.Link className="ml-sm-5" as={Link} to="/">
-            <FaCartArrowDown className="cart-icon" />
-          </Nav.Link>
+
+          <Navbar.Text className="ml-sm-5">
+            <FaCartArrowDown className="cart-icon snipcart-checkout" />
+          </Navbar.Text>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
