@@ -3,11 +3,10 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 import Img from "gatsby-image"
 import Title from "../../Globals/Title/Title"
 
-const Menu = ({ items: { nodes } }) => {
+const Menu = ({ items: { edges: nodes } }) => {
   const getCategories = items => {
-    return ["all", ...new Set(items.map(({ category }) => category))]
+    return ["all", ...new Set(items.map(({ node: { category } }) => category))]
   }
-
   const handleItems = category => {
     category === "all"
       ? setState({ ...state, coffeeItems: items })
@@ -16,15 +15,12 @@ const Menu = ({ items: { nodes } }) => {
           coffeeItems: items.filter(item => item.category === category),
         })
   }
-
   const [state, setState] = useState({
     coffeeItems: nodes,
     items: nodes,
     categories: getCategories(nodes),
   })
-
   const { items, coffeeItems, categories } = state
-
   return (
     <section className="menu py-5">
       <Container>
@@ -51,11 +47,13 @@ const Menu = ({ items: { nodes } }) => {
           {items.length > 0 ? (
             coffeeItems.map(
               ({
-                id,
-                image: { fixed },
-                description: { description },
-                title,
-                price,
+                node: {
+                  id,
+                  image: { fixed },
+                  description: { description },
+                  title,
+                  price,
+                },
               }) => {
                 return (
                   <Col key={id} md={6} className="my-3 d-flex mx-auto">

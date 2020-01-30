@@ -10,29 +10,27 @@ import Contact from "../components/Home/Contact/Contact"
 
 export const query = graphql`
   {
-    img: file(
-      absolutePath: {}
-      relativePath: { eq: "default-background.jpeg" }
-    ) {
-      id
+    img: file(relativePath: { eq: "default-background.jpeg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
     menu: allContentfulCoffeeItem {
-      nodes {
-        id
-        description {
-          description
-        }
-        title
-        price
-        category
-        image {
-          fixed(width: 50, height: 50) {
-            ...GatsbyContentfulFixed_tracedSVG
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          price
+          category
+          image {
+            fixed(width: 50, height: 50) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
           }
         }
       }

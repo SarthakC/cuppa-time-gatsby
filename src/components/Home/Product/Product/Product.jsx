@@ -8,13 +8,11 @@ const Product = ({ product: { image, title, price } }) => {
       <Card style={{ minHeight: "100%" }}>
         <Img fluid={image.fluid} as={Card.Img} variant="top" />
         <Card.Body className="text-center">
-          <Card.Text>
-            <h6>{title}</h6>
-            <h6>{price}</h6>
-            <Button className="btn-yellow mt-3 text-capitalize" variant="light">
-              add to cart
-            </Button>
-          </Card.Text>
+          <h6>{title}</h6>
+          <h6>{price}</h6>
+          <Button className="btn-yellow mt-3 text-capitalize" variant="light">
+            add to cart
+          </Button>
         </Card.Body>
       </Card>
     </Col>
