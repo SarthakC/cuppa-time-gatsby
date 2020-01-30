@@ -12,7 +12,7 @@ const Menu = ({ items: { edges: nodes } }) => {
       ? setState({ ...state, coffeeItems: items })
       : setState({
           ...state,
-          coffeeItems: items.filter(item => item.category === category),
+          coffeeItems: items.filter(({ node }) => node.category === category),
         })
   }
   const [state, setState] = useState({
@@ -20,6 +20,7 @@ const Menu = ({ items: { edges: nodes } }) => {
     items: nodes,
     categories: getCategories(nodes),
   })
+
   const { items, coffeeItems, categories } = state
   return (
     <section className="menu py-5">
